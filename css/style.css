@@ -498,6 +498,7 @@ header {
 
 .section__about-me-img img {
     height: 100%;
+    width: 100%;
     object-fit: contain;
 }
 
@@ -925,7 +926,7 @@ header {
     }
 
     .section__about-me-bg {
-        flex-direction: column;
+        display: block;
         padding: 50px 20px;
     }
 
