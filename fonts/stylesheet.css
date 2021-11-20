@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Celestina';
+    src: url('Celestina.eot');
+    src: local('Celestina'), url('Celestina.eot?#iefix') format('embedded-opentype'), url('Celestina.woff2') format('woff2'), url('Celestina.woff') format('woff'), url('Celestina.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
