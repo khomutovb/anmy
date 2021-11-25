@@ -1016,9 +1016,7 @@ header {
     .section__aerography-meImg {
         position: static;
         height: 100%;
-        padding: 0;
-        padding-left: 20px;
-        padding-right: 15px;
+        padding: 0 15px;
         margin: auto;
         max-width: 400px;
         display: flex;
@@ -1028,10 +1026,6 @@ header {
         height: 100%;
         width: 100%;
         object-fit: cover;
-    }
-
-    .section__aerography-content {
-        padding-bottom: 30px;
     }
 
     .section__aerography-signature::after {
@@ -1158,7 +1152,7 @@ header {
     }
 
     .section__aerography-signature {
-        left: 15px;
+        left: 14px;
     }
 
     .section__aerography-signature::after, .section__about-me-signature::after {
@@ -1169,8 +1163,9 @@ header {
         height: 1px;
     }
 
-    .section__aerography-signature p {
+    .section__aerography-signature p, .section__about-me-signature p, .border__left-text, .section__products-signature p, .section__services-title p {
         font-size: 16px;
+        padding: 0px 12px;
     }
 
     .services__list {
@@ -1217,6 +1212,6 @@ header {
     }
 
     .border__left-text-box {
-        left: -9px;
+        left: -8px;
     }
 }
