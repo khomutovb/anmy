@@ -307,7 +307,7 @@ header {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 0 100px;
+    padding: 12px 100px;
     overflow: hidden;
 }
 
@@ -1128,7 +1128,7 @@ header {
 @media (max-width: 480px) {
     .section__aerography-meImg {
         width: 100%;
-        height: calc(100vh - 390px);
+        height: calc(100vh - 360px);
     }
 
     .section__aerography-content {
