@@ -1004,7 +1004,7 @@ header {
 
     .section__aerography-row {
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-evenly;
         background: #7481aa;
     }
 
@@ -1130,6 +1130,11 @@ header {
         height: calc(100vh - 390px);
     }
 
+    .section__aerography-content {
+        position: relative;
+        top: -30px;
+    }
+
     .section__aerography-title, .section__about-me-title {
         font-size: 40px;
         line-height: inherit;
@@ -1142,7 +1147,7 @@ header {
     }
 
     .section__aerography-bg {
-        margin-top: 10%;
+        margin-top: 5%;
         padding-left: 15px;
     }
 
