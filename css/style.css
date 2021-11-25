@@ -939,7 +939,9 @@ header {
     .services__list {
         padding: 0 40px;
     }
-
+    .services__item{
+        cursor: auto;
+    }
     .services__item:nth-child(2), .services__item:nth-child(3) {
         margin-top: 0;
     }
