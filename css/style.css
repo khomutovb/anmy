@@ -14,6 +14,12 @@ img {
     max-width: 100%;
 }
 
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
 html, body {
     height: 100%;
     min-height: 100%;
@@ -24,7 +30,7 @@ header {
     left: 0;
     top: 0px;
     width: 100%;
-    z-index: 99;
+    z-index: 102;
 }
 
 .header__container {
@@ -55,6 +61,120 @@ header {
     font-weight: normal;
     font-size: 72px;
     line-height: 125px;
+    color: #fff;
+}
+
+.burger {
+    cursor: pointer;
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background: transparent;
+    margin-left: 55px;
+    top: 1px;
+}
+
+.burger::before, .burger::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    background: #fff;
+    -webkit-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+    will-change: transform;
+}
+
+.burger::after {
+    -webkit-transform: translateY(4px);
+    -ms-transform: translateY(4px);
+    transform: translateY(4px);
+}
+
+.burger::before {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    transform: translateY(-4px);
+}
+
+.is-active.burger::before {
+    -webkit-transform: translateY(0) rotate(45deg);
+    -ms-transform: translateY(0) rotate(45deg);
+    transform: translateY(0) rotate(45deg);
+}
+
+.is-active.burger::after {
+    -webkit-transform: translateY(0) rotate(-45deg);
+    -ms-transform: translateY(0) rotate(-45deg);
+    transform: translateY(0) rotate(-45deg);
+}
+
+.menu-toggle {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity .6s, visibility .6s;
+    -o-transition: opacity .6s, visibility .6s;
+    transition: opacity .6s, visibility .6s;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.menu-toggle.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-toggle__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: -webkit-transform .6s;
+    transition: -webkit-transform .6s;
+    -o-transition: transform .6s;
+    transition: transform .6s;
+    transition: transform .6s, -webkit-transform .6s;
+    padding: 40px 60px;
+    width: 100%;
+    height: 100%;
+    background: #7481AA;
+    will-change: transform;
+    margin: auto;
+    margin-right: 0;
+    min-height: 400px;
+}
+
+.menu-toggle__inner.is-active {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
+.nav a {
+    display: block;
+    font-size: 24px;
+    margin-top: 40px;
+    text-align: center;
     color: #fff;
 }
 
@@ -854,8 +974,20 @@ header {
 }
 
 @media (max-width: 992px) {
-    nav {
+    header nav {
         display: none;
+    }
+
+    body.overflow {
+        overflow: hidden;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .burger {
+        display: block;
     }
 
     .logo {
@@ -881,9 +1013,12 @@ header {
     .section__aerography-meImg {
         position: static;
         height: 100%;
-        padding: 0 20px;
+        padding: 0;
+        padding-left: 20px;
+        padding-right: 15px;
         margin: auto;
         max-width: 400px;
+        display: flex;
     }
 
     .section__aerography-meImg img {
@@ -995,6 +1130,7 @@ header {
 @media (max-width: 480px) {
     .section__aerography-meImg {
         width: 100%;
+        height: calc(100vh - 350px);
     }
 
     .section__aerography-title, .section__about-me-title {
