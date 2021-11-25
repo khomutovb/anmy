@@ -13,6 +13,7 @@
         />
         <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="manifest" href="/manifest.json" />
     </head>
 
     <body>
@@ -278,7 +279,9 @@
         burger.addEventListener("click", (e) => {
             e.target.classList.toggle("is-active");
             mobileMenu.classList.toggle("is-active");
-            mobileMenu.querySelector(".menu-toggle__inner").classList.toggle("is-active");
+            mobileMenu
+                .querySelector(".menu-toggle__inner")
+                .classList.toggle("is-active");
             document.body.classList.toggle("overflow");
         });
     </script>
