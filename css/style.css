@@ -1004,7 +1004,7 @@ header {
 
     .section__aerography-row {
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-evenly;
         background: #7481aa;
     }
 
@@ -1133,7 +1133,7 @@ header {
 @media (max-width: 480px) {
     .section__aerography-meImg {
         width: 100%;
-        height: calc(100vh - 400px);
+        height: calc(100vh - 350px);
     }
 
     .section__aerography-title, .section__about-me-title {
