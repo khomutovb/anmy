@@ -3,10 +3,8 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
 }
+
 
 a {
     text-decoration: none;
@@ -50,7 +48,7 @@ header {
 .nav__item {
     margin-right: 60px;
     font-size: 16px;
-    line-height: 25px;
+    line-height: 1.5;
     color: #586282;
 }
 
@@ -63,7 +61,6 @@ header {
     font-style: normal;
     font-weight: normal;
     font-size: 72px;
-    line-height: 125px;
     color: #fff;
 }
 
@@ -242,12 +239,11 @@ header {
     font-style: normal;
     font-weight: normal;
     font-size: 56px;
-    line-height: 95px;
     color: #C8D1ED;
 }
 
 .section__aerography-description {
-    line-height: 25px;
+    line-height: 1.5;
     color: #2C698D;
     max-width: 580px;
 }
@@ -321,6 +317,9 @@ header {
     text-align: center;
     position: relative;
     cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .services__item p {
@@ -606,7 +605,7 @@ header {
 }
 
 .section__about-me-description {
-    line-height: 25px;
+    line-height: 1.5;
     color: #FFFFFF;
     margin-top: 16px;
 }
@@ -1142,7 +1141,6 @@ header {
 
     .section__aerography-description, .section__about-me-description {
         font-size: 14px;
-        line-height: 24px;
         margin-top: 8px;
     }
 
