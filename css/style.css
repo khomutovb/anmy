@@ -1127,7 +1127,7 @@ header {
 @media (max-width: 480px) {
     .section__aerography-meImg {
         width: 100%;
-        height: calc(100vh - 365px);
+        height: calc(100vh - 390px);
     }
 
     .section__aerography-title, .section__about-me-title {
