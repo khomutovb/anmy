@@ -1047,7 +1047,6 @@ footer {
 
     .logo {
         font-size: 50px;
-        line-height: inherit;
     }
 
     .section__aerography {
@@ -1115,7 +1114,7 @@ footer {
 
     .section__about-me-bg {
         display: block;
-        padding: 50px 15px;
+        padding: 15px;
     }
 
     .section__about-me-content {
@@ -1126,9 +1125,9 @@ footer {
 
     .section__about-me-img {
         padding: 0;
-        padding-top: 50px;
-        max-width: 100%;
+        padding-top: 15px;
         padding-left: 15px;
+        max-width: 100%;
         overflow: hidden;
     }
 
@@ -1170,6 +1169,9 @@ footer {
         right: 15px;
         bottom: 15px;
     }
+    .product__list{
+        padding-top: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1188,7 +1190,6 @@ footer {
 
     .section__aerography-title, .section__about-me-title {
         font-size: 40px;
-        line-height: inherit;
     }
 
     .section__aerography-description, .section__about-me-description {
@@ -1202,7 +1203,6 @@ footer {
 
     .logo {
         font-size: 40px;
-        line-height: inherit;
     }
 
     .section__aerography-signature {
