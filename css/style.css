@@ -5,6 +5,9 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.wow {
+    visibility: hidden;
+}
 
 a {
     text-decoration: none;
@@ -24,6 +27,20 @@ button {
 html, body {
     height: 100%;
     min-height: 100%;
+}
+
+section:not(:first-of-type) {
+    padding: 100px 0;
+}
+
+body .section__services {
+    padding: 50px 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+body .section__about-me {
+    padding-top: 150px;
 }
 
 header {
@@ -46,10 +63,28 @@ header {
 }
 
 .nav__item {
+    position: relative;
     margin-right: 60px;
     font-size: 16px;
     line-height: 1.5;
     color: #586282;
+}
+
+.nav__item::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #586282;
+    content: "";
+    -webkit-transition: width 0.3s ease-out;
+    -o-transition: width 0.3s ease-out;
+    transition: width 0.3s ease-out;
+}
+
+.nav__item:hover::after {
+    width: 100%;
 }
 
 .nav__item:last-child {
@@ -206,7 +241,7 @@ header {
 .section__aerography-meImg {
     position: absolute;
     right: -140px;
-    height: 73%;
+    height: 90%;
     max-height: 793px;
     margin-left: 100px;
     z-index: 10;
@@ -239,6 +274,7 @@ header {
     font-style: normal;
     font-weight: normal;
     font-size: 56px;
+    line-height: 2;
     color: #C8D1ED;
 }
 
@@ -288,7 +324,6 @@ header {
 /* services */
 
 .section__services {
-    padding-top: 200px;
     width: 100%;
 }
 
@@ -538,9 +573,6 @@ header {
 
 /* about-me  */
 
-.section__about-me {
-    padding-top: 200px;
-}
 
 .section__about-me-bg {
     display: flex;
@@ -627,7 +659,6 @@ header {
 /* contacts */
 
 .section__contacts {
-    padding-top: 250px;
     margin: 0 100px;
 }
 
@@ -746,9 +777,6 @@ header {
 
 /* products */
 
-.section__products {
-    padding-top: 200px;
-}
 
 .section__products-signature {
     position: relative;
@@ -834,17 +862,30 @@ header {
     align-items: center;
     background: #7481AA;
     color: #fff;
-
+    transition: background .4s;
 }
 
+.btn__details:hover {
+    background: #576287;
+}
+
+footer {
+    padding: 50px 0;
+    background: #7481aa;
+}
+.footer__logo{
+    text-align: center;
+}
+.footer__copyright{
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    padding-top: 50px;
+}
 @media(max-width: 1366px) {
     .section__about-me-img {
         top: -50px;
         height: calc(100% + 100px);
-    }
-
-    .section__contacts {
-        padding-top: 200px;
     }
 }
 
@@ -880,10 +921,6 @@ header {
 
     .nav__item {
         margin-right: 30px;
-    }
-
-    .section__services, .section__about-me, .section__contacts, .section__products, .product__list {
-        padding-top: 100px;
     }
 
     .section__contacts {
@@ -976,6 +1013,18 @@ header {
 
     .services__item:nth-child(3) .circle {
         transform: rotate(225deg);
+    }
+
+    section:not(:first-of-type) {
+        padding: 0;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    body .section__contacts, body .section__products, body .section__services {
+        padding: 25px 0;
+        margin-top: 25px;
+        margin-bottom: 25px;
     }
 }
 
@@ -1085,10 +1134,6 @@ header {
 
     .section__services-title {
         margin-bottom: 50px;
-    }
-
-    .section__services, .section__about-me, .section__contacts, .section__products, .product__list {
-        padding-top: 50px;
     }
 
     .services__list {
