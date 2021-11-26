@@ -1154,6 +1154,7 @@ footer {
     .product__item {
         max-width: 50%;
         padding: 0px 5px 20px;
+        min-width: 300px;
     }
 
     .border__right-text-box {
@@ -1169,8 +1170,17 @@ footer {
         right: 15px;
         bottom: 15px;
     }
+    .product__list-container{
+        overflow: hidden;
+    }
     .product__list{
-        padding-top: 20px;
+        padding: 20px 15px 0;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        width: 100%;
+    }
+    body .section__products{
+        padding-bottom: 0;
     }
 }
 
