@@ -28,6 +28,7 @@ scrollLink.forEach((element) => {
     });
 });
 wow = new WOW({
+    mobile: false,
     live: false,
 });
 wow.init();
