@@ -1,6 +1,7 @@
 const burger = document.querySelector(".burger");
 const mobileMenu = document.querySelector(".menu-toggle");
 const scrollLink = document.querySelectorAll(".link");
+const serviceItems = document.querySelectorAll(".services__item")
 
 function toggleMenu() {
     burger.classList.toggle("is-active");
@@ -18,7 +19,6 @@ scrollLink.forEach((element) => {
         e.preventDefault();
         let href = this.getAttribute("href");
         let elem = document.querySelector(href);
-        let position = 0;
         toggleMenu();
         window.scroll({
             top: elem.offsetTop,
@@ -27,6 +27,18 @@ scrollLink.forEach((element) => {
         });
     });
 });
+for (const serviceItem of serviceItems) {
+    serviceItem.addEventListener('click', () => {
+        clearActiveClasses();
+        serviceItem.classList.add('active')
+    })
+}
+
+function clearActiveClasses() {
+    serviceItems.forEach((serviceItem) => {
+        serviceItem.classList.remove('active')
+    })
+}
 wow = new WOW({
     mobile: false,
     live: false,
