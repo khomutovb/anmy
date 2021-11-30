@@ -1122,7 +1122,7 @@ footer {
     }
 
     .section__aerography-title, .section__about-me-title {
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .section__aerography-description, .section__about-me-description {
@@ -1196,6 +1196,9 @@ footer {
         margin: auto;
         text-align: center;
         padding: 5px;
+    }
+    .services__item-text{
+        white-space: initial;
     }
 }
 
