@@ -17,9 +17,14 @@ burger.addEventListener("click", (e) => {
 scrollLink.forEach((element) => {
     element.addEventListener("click", function (e) {
         e.preventDefault();
+        burger.classList.remove("is-active");
+        mobileMenu.classList.remove("is-active");
+        mobileMenu
+            .querySelector(".menu-toggle__inner")
+            .classList.remove("is-active");
+        document.body.classList.remove("overflow");
         let href = this.getAttribute("href");
         let elem = document.querySelector(href);
-        toggleMenu();
         window.scroll({
             top: elem.offsetTop,
             left: 0,

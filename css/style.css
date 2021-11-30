@@ -33,16 +33,6 @@ section:not(:first-of-type) {
     padding: 100px 0;
 }
 
-body .section__services {
-    padding: 50px 0;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-body .section__about-me {
-    padding-top: 150px;
-}
-
 header {
     position: absolute;
     left: 0;
@@ -361,9 +351,9 @@ header {
 }
 
 .services__list {
+    padding: 100px 0;
     display: flex;
     flex-wrap: nowrap;
-    padding: 100px 0 50px;
 }
 
 .services__item {
@@ -376,18 +366,27 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    transition: all 500ms ease-in-out;
+    transition: background-size 500ms ease-in-out, flex 500ms ease-in-out;
     overflow: hidden;
+    margin-right: 4px;
 }
-.services__item:nth-child(1){
+
+.services__item:last-child {
+    margin-right: 0;
+}
+
+.services__item:nth-child(1) {
     background-image: url("../img/service1.jpg");
 }
-.services__item:nth-child(2){
+
+.services__item:nth-child(2) {
     background-image: url("../img/service2.jpg");
 }
-.services__item:nth-child(3){
+
+.services__item:nth-child(3) {
     background-image: url("../img/service3.jpg");
 }
+
 .services__item.active {
     flex: 3;
 }
@@ -400,8 +399,9 @@ header {
     bottom: 0;
     background: #586282;
     opacity: 0;
+    visibility: hidden;
     z-index: 2;
-    transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
 }
 
 .services__item-content {
@@ -411,15 +411,20 @@ header {
     left: 40px;
     z-index: 3;
     opacity: 0;
-    transition: opacity 500ms ease-in-out;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all 500ms ease-in-out;
 }
 
 .services__item.active .services__item-overlay {
     opacity: 0.5;
+    visibility: visible;
 }
 
 .services__item.active .services__item-content {
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .services__item-order {
@@ -428,12 +433,46 @@ header {
 }
 
 .services__item-text {
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
+    white-space: nowrap;
 }
 
 /* about-me  */
 
+.section__about-me-signature-title {
+    display: none;
+    position: relative;
+    width: 100%;
+}
+
+.section__about-me-signature-title::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-radius: 2px;
+    height: 2px;
+    background: #7481AA;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+}
+
+.section__about-me-signature-title p {
+    font-size: 20px;
+    display: inline;
+    color: #7481AA;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 0 32px;
+    position: relative;
+    z-index: 9;
+    white-space: nowrap;
+    margin-left: 68px;
+}
 
 .section__about-me-bg {
     display: flex;
@@ -715,19 +754,19 @@ header {
 }
 
 .btn__details {
-    margin-top: 16px;
-    width: 100%;
-    height: 40px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: #7481AA;
-    color: #fff;
-    transition: background .4s;
+    margin-top: 16px;
+    color: #586282;
 }
 
-.btn__details:hover {
-    background: #576287;
+.btn__details .arrow {
+    transform: translateX(5px);
+    transition: transform .4s;
+}
+
+.btn__details:hover .arrow {
+    transform: translateX(10px);
 }
 
 footer {
@@ -736,20 +775,44 @@ footer {
 }
 
 .footer__logo {
+    display: block;
     text-align: center;
 }
 
 .footer__copyright {
     text-align: center;
     color: #fff;
-    font-size: 10px;
-    padding-top: 50px;
+    font-size: 12px;
+}
+
+.footer__nav {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.footer__nav a {
+    display: block;
+    margin: 0 15px;
+    color: #fff;
 }
 
 @media(max-width: 1366px) {
+    section:not(:first-of-type) {
+        padding: 50px 0;
+    }
+
+    .services__list {
+        padding: 50px 0;
+    }
+
     .section__about-me-img {
         top: -50px;
         height: calc(100% + 100px);
+    }
+
+    .product__list {
+        padding-top: 50px;
     }
 }
 
@@ -765,7 +828,7 @@ footer {
         margin: 0 40px;
     }
 
-    .section__aerography-signature, .section__about-me-signature {
+    .section__aerography-signature {
         left: 15px;
     }
 
@@ -782,21 +845,24 @@ footer {
     }
 
     .section__about-me-content {
-        margin-left: 60px;
+        margin-left: 15px;
         max-width: 50%;
         padding-right: 40px;
     }
 
     .section__about-me-img {
+        display: flex;
         position: static;
         top: initial;
         right: initial;
         height: auto;
+        max-height: initial;
         max-width: 50%;
         padding: 20px;
     }
 
     .section__about-me-bg {
+        margin-top: 50px;
         max-height: initial;
         min-height: initial;
     }
@@ -812,19 +878,55 @@ footer {
     .section__products-signature p, .section__services-title p {
         margin-left: 20px;
     }
-}
 
-@media (max-width: 1024px) {
-    section:not(:first-of-type) {
-        padding: 0;
-        margin-top: 50px;
-        margin-bottom: 50px;
+    .section__about-me-signature-title {
+        display: block;
     }
 
-    body .section__contacts, body .section__products, body .section__services {
-        padding: 25px 0;
-        margin-top: 25px;
-        margin-bottom: 25px;
+    .section__about-me-signature {
+        display: none;
+    }
+
+    .services__list {
+        padding: 0;
+        padding-top: 50px;
+    }
+
+    body .section__services {
+        padding-bottom: 0;
+    }
+
+    .services__list {
+        flex-direction: column;
+    }
+
+    .services__item {
+        width: 100%;
+        display: block;
+        min-height: 200px;
+        max-height: 200px;
+        display: block;
+        height: auto;
+        transition: none;
+        cursor: auto;
+        margin-bottom: 4px;
+    }
+
+    .services__item:last-child {
+        margin-bottom: 0;
+    }
+
+    .services__item-overlay {
+        opacity: 0.5;
+        visibility: visible;
+        transition: none;
+    }
+
+    .services__item-content {
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        transform: translateY(0);
     }
 }
 
@@ -911,14 +1013,13 @@ footer {
 
     .section__about-me-content {
         max-width: 100%;
-        margin-left: 15px;
         padding: 0;
+        margin-left: 0;
     }
 
     .section__about-me-img {
         padding: 0;
         padding-top: 15px;
-        padding-left: 15px;
         max-width: 100%;
         overflow: hidden;
     }
@@ -952,7 +1053,7 @@ footer {
     }
 
     .product__list {
-        padding: 20px 15px 0;
+        padding: 50px 10px 0;
         flex-wrap: nowrap;
         overflow-x: scroll;
         width: 100%;
@@ -961,11 +1062,54 @@ footer {
     body .section__products {
         padding-bottom: 0;
     }
+
+    .services__item-content {
+        top: 40px;
+        left: 20px;
+    }
+
+    .services__item-order {
+        font-size: 24px;
+    }
+
+    .services__item-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section__products-signature, .section__services-title, .section__about-me-signature-title, .section__services-signature {
+        text-align: center;
+    }
+
+    .section__aerography-signature p, .border__left-text, .section__products-signature p, .section__services-title p, .section__about-me-signature-title p, .section__services-signature p {
+        margin: auto;
+    }
 }
 
 @media (max-width: 480px) {
+    section:not(:first-of-type) {
+        padding: 20px 0;
+    }
+
+    .services__list {
+        padding-top: 20px;
+    }
+
+    body .section__services {
+        padding-bottom: 0;
+    }
+
+    .section__about-me-bg {
+        margin-top: 20px;
+    }
+
     .section__aerography-row {
         padding-bottom: 0;
+    }
+
+    .product__list {
+        padding-top: 20px;
     }
 
     .section__aerography-meImg {
@@ -998,17 +1142,8 @@ footer {
         left: 14px;
     }
 
-    .section__aerography-signature::after, .section__about-me-signature::after {
+    .section__aerography-signature::after {
         width: 1px;
-    }
-
-    .section__services-title::after, .section__products-signature::after {
-        height: 1px;
-    }
-
-    .section__aerography-signature p, .section__about-me-signature p, .border__left-text, .section__products-signature p, .section__services-title p {
-        font-size: 16px;
-        padding: 0px 12px;
     }
 
     .contacts__item-text {
@@ -1024,12 +1159,17 @@ footer {
         font-size: 110px;
     }
 
-    .section__products-signature p, .section__services-title p {
-        margin: auto;
+    .border__left-text-box {
+        left: -7px;
     }
 
-    .section__products-signature, .section__services-title {
-        text-align: center;
+    .section__aerography-signature p, .border__left-text, .section__products-signature p, .section__services-title p, .section__about-me-signature-title p, .section__services-signature p {
+        font-size: 16px;
+        padding: 0px 12px;
+    }
+
+    .section__services-title::after, .section__products-signature::after, .section__about-me-signature-title::after, .section__services-signature::after {
+        height: 1px;
     }
 
     .border__right {
@@ -1042,8 +1182,20 @@ footer {
         border-left: 1px solid #7481AA;
     }
 
-    .border__left-text-box {
-        left: -7px;
+    footer {
+        padding: 20px 0;
+    }
+
+    .footer__nav {
+        padding: 20px 0;
+        flex-wrap: wrap;
+    }
+
+    .footer__nav a {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        padding: 5px;
     }
 }
 
