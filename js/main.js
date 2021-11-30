@@ -3,25 +3,18 @@ const mobileMenu = document.querySelector(".menu-toggle");
 const scrollLink = document.querySelectorAll(".link");
 const serviceItems = document.querySelectorAll(".services__item")
 
-function toggleMenu() {
+burger.addEventListener("click", (e) => {
     burger.classList.toggle("is-active");
     mobileMenu.classList.toggle("is-active");
-    mobileMenu
-        .querySelector(".menu-toggle__inner")
-        .classList.toggle("is-active");
+    mobileMenu.querySelector(".menu-toggle__inner").classList.toggle("is-active");
     document.body.classList.toggle("overflow");
-}
-burger.addEventListener("click", (e) => {
-    toggleMenu();
 });
 scrollLink.forEach((element) => {
     element.addEventListener("click", function (e) {
         e.preventDefault();
         burger.classList.remove("is-active");
         mobileMenu.classList.remove("is-active");
-        mobileMenu
-            .querySelector(".menu-toggle__inner")
-            .classList.remove("is-active");
+        mobileMenu.querySelector(".menu-toggle__inner").classList.remove("is-active");
         document.body.classList.remove("overflow");
         let href = this.getAttribute("href");
         let elem = document.querySelector(href);
