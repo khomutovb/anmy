@@ -5,6 +5,16 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #586282;
+    border-radius: 5px;
+}
 .wow {
     visibility: hidden;
 }
@@ -910,6 +920,7 @@ footer {
         transition: none;
         cursor: auto;
         margin-bottom: 4px;
+        margin-right: 0;
     }
 
     .services__item:last-child {
@@ -1197,7 +1208,8 @@ footer {
         text-align: center;
         padding: 5px;
     }
-    .services__item-text{
+
+    .services__item-text {
         white-space: initial;
     }
 }
