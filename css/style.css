@@ -1340,7 +1340,7 @@ footer {
     }
 
     .product__section {
-        margin-bottom: 50px;
+        margin-bottom: 120px;
     }
 
     .logo {
@@ -1415,7 +1415,7 @@ footer {
         padding: 40px 0;
     }
     body .section__about-me{
-        padding-bottom: 60px;
+        padding-bottom: 0px;
     }
     body .section__contacts{
         padding-top: 60px;
