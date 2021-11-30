@@ -1204,10 +1204,6 @@ footer {
         width: 100%;
     }
 
-    body .section__products {
-        padding-bottom: 0;
-    }
-
     .services__item-content {
         top: 40px;
         left: 20px;
@@ -1306,7 +1302,7 @@ footer {
     }
 
     .product__list {
-        padding-top: 40px;
+        padding-top: 20px;
     }
 
     .section__aerography-meImg {
@@ -1419,10 +1415,14 @@ footer {
         padding: 40px 0;
     }
     body .section__about-me{
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
     body .section__contacts{
-        padding-top: 40px;
+        padding-top: 60px;
+        padding-bottom: 0;
+    }
+    body .section__products{
+        padding-bottom: 100px;
     }
 }
 
