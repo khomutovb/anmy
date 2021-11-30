@@ -1302,7 +1302,7 @@ footer {
     }
 
     .section__aerography-row {
-        padding-bottom: 40px;
+        padding-bottom: 50px;
     }
 
     .product__list {
@@ -1322,6 +1322,10 @@ footer {
         font-size: 36px;
     }
 
+    .section__aerography-title {
+        line-height: 1;
+    }
+
     .section__aerography-description, .section__about-me-description {
         font-size: 14px;
         margin-top: 8px;
@@ -1334,10 +1338,12 @@ footer {
     .section__aerography-bg {
         margin-top: 52px;
     }
-    .product__section-row{
+
+    .product__section-row {
         margin-top: 52px;
     }
-    .product__section{
+
+    .product__section {
         margin-bottom: 50px;
     }
 
