@@ -1306,7 +1306,7 @@ footer {
     }
 
     .product__list {
-        padding-top: 20px;
+        padding-top: 40px;
     }
 
     .section__aerography-meImg {
@@ -1413,6 +1413,16 @@ footer {
 
     .services__item-text {
         white-space: initial;
+    }
+    .section__products-signature, .section__services-title, .section__about-me-signature-title, .section__services-signature {
+        text-align: center;
+        padding: 40px 0;
+    }
+    body .section__about-me{
+        padding-bottom: 40px;
+    }
+    body .section__contacts{
+        padding-top: 40px;
     }
 }
 
